@@ -30,6 +30,11 @@ main {
   justify-content: center;
 }
 
+#start {
+  flex-direction: none;
+  width: fit-content;
+}
+
 ul {
   margin: 0;
   padding: 0;

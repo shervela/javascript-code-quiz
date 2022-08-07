@@ -10,6 +10,9 @@ var outcome = document.querySelector("#answer-outcome");
 
 const scorePoints = 25;
 
+var gameOver = document.getElementById("#quiz-end");
+var winGame = document.querySelector("#content");
+
 var questions = [
   {
     question: "Commonly used data types do NOT include: ",
@@ -74,9 +77,6 @@ startBtn.addEventListener("click", function () {
   startBtn.setAttribute("style", "display: none;");
   startBtn.innerHTML = "";
 
-  var gameOver = document.createElement("h2");
-  var winGame = document.querySelector("#content");
-
   var timerInterval = setInterval(function () {
     timerEl.textContent = timerCount;
     timerCount--;
@@ -87,10 +87,11 @@ startBtn.addEventListener("click", function () {
     }
   }, 1000);
 });
+var bodyEl = document.body;
 
 function endGame() {
-  gameOver.textContent("section");
-  containerEl.body.appendChild(gameOver);
+  gameOver.setAttribute("style", "display: box;");
+  bodyEl.appendChild(gameOver);
 }
 
 containerEl.addEventListener("click", function (event) {
@@ -106,7 +107,7 @@ containerEl.addEventListener("click", function (event) {
       outcome.textContent = "Correct!";
       document.body.appendChild(outcome);
       //   increase score
-
+      scorePoints;
       // modify timer
     } else {
       outcome.textContent = "Wrong!";
@@ -117,4 +118,4 @@ containerEl.addEventListener("click", function (event) {
   }
 });
 // quiz-finish, enter initials
-// view highsores local storage
+// input and view highsores local storage
