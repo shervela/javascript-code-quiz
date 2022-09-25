@@ -67,7 +67,7 @@ button:hover {
   text-align: left;
 }
 
-#quiz-end {
+.quiz-end {
   display: none;
 }
 
